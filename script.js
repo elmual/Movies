@@ -1,17 +1,4 @@
 
-// let numberOfFilms;
-
-// function start() {
-//     numberOfFilms = +prompt('Neçə kinoya baxmısınız? ');
-
-//     while (numberOfFilms == '' || numberOfFilms == null || isNaN(numberOfFilms)) {
-//         numberOfFilms = +prompt('Neçə kinoya baxmısınız? ');
-//     }
-// }
-
-// yuxaridaki start funksiyasini obyekt daxilinde metod kimi yaziriq
-// daha sonra yuxaridaki start(), let numberOfFilms; ve start funksiyasini sile bilerik
-// count helelik 0 deyeri veririlr. Her yerde numberOfFilms deyisilir,personalMovieDB.count ile
 const personalMovieDB = {
     count: 0,
     movies: {},
@@ -55,6 +42,13 @@ const personalMovieDB = {
             console.log(personalMovieDB);
         }
     },
+    toogleVisibleMyDB: function(){
+        if (personalMovieDB.privat) {
+            personalMovieDB.privat = false;
+        } else {
+            personalMovieDB.privat = true;
+        }
+    },
     writeYourGenres: function() {
         for (let i = 1; i <= 3; i++) {
             const genre = prompt(`Sizin xosunuza gelen ${i}-li janr`);
@@ -62,7 +56,5 @@ const personalMovieDB = {
         }
     }
 };
-
-// butun funksiyalari obyekt daxilinde metodlara ceviririk
 
 
