@@ -52,8 +52,18 @@ const personalMovieDB = {
     writeYourGenres: function() {
         for (let i = 1; i <= 3; i++) {
             const genre = prompt(`Sizin xosunuza gelen ${i}-li janr`);
-            personalMovieDB.genres[i-1] = genre;
+
+            if (genre == null || genre == '') {
+                console.log('Sehv bas verdi');
+                i--;
+            } else {
+                personalMovieDB.genres[i-1] = genre;
+            }
         }
+
+        personalMovieDB.genres.forEach((item, i) => {
+            console.log(`Xosunuza gelen janr ${i + 1}: ${item}`);
+        })
     }
 };
 
