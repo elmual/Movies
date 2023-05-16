@@ -50,14 +50,15 @@ const personalMovieDB = {
         }
     },
     writeYourGenres: function() {
-        for (let i = 1; i <= 3; i++) {
-            const genre = prompt(`Sizin xosunuza gelen ${i}-li janr`);
+        for (let i = 1; i < 2; i++) {
+            let genres = prompt(`Xoşunuza gələn janrları arasında boşluq ilə qeyd edin`);
 
-            if (genre == null || genre == '') {
+            if (genres == null || genres == '') {
                 console.log('Sehv bas verdi');
                 i--;
             } else {
-                personalMovieDB.genres[i-1] = genre;
+                personalMovieDB.genres = genres.split(' ');
+                personalMovieDB.genres.sort();
             }
         }
 
